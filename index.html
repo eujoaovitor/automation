@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Fluxo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <input type="text">
+        </div>
+        <div>
+            <button class="publish-button">Publicar</button>
+        </div>
+    </header>
+
+    <div class="zoom-controls">
+        <button class="zoom-button zoom-in">
+            <i class="fas fa-plus"></i>
+        </button>
+        <button class="zoom-button zoom-out">
+            <i class="fas fa-minus"></i>
+        </button>
+    </div>
+
+    <nav class="navbar">
+
+        <div class="box">
+            <div class="box-header">
+                <p class="titulo">Mensagem</p>
+                <i class="fa-solid fa-x"></i>
+            </div>
+            
+
+            <div class="grup-botoes">
+                <button class="navbar-button">
+                    <i class="fas fa-font icon-blue"></i> Texto
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fas fa-image icon-blue"></i> Imagem
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fa-solid fa-link icon-blue"></i> Link
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fa-solid fa-headphones icon-blue"></i> Áudio
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fa-regular fa-file-video icon-blue"></i> Vídeo
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fa-regular fa-address-book icon-blue"></i> Contato
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fa-regular fa-file icon-blue"></i> Documentos
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fa-solid fa-list icon-blue"></i> Lista
+                </button>
+
+            </div>
+        </div>
+
+        <div class="box">
+            <p class="titulo">Entrada</p>
+
+            <div class="grup-botoes">
+                <button class="navbar-button">
+                    <i class="fa-solid fa-font icon-orange"></i> Texto
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fas fa-volume-up icon-orange"></i> Número
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fas fa-volume-up icon-orange"></i> Data
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fas fa-volume-up icon-orange"></i> E-mail
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fas fa-volume-up icon-orange"></i> Monetário
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fa-solid fa-phone icon-orange"></i> Telefone
+                </button>
+
+            </div>
+        </div>
+
+        <div class="box">
+            <p class="titulo">Comportamento</p>
+
+            <div class="grup-botoes">
+
+                <button class="navbar-button">
+                    <i class="fas fa-video"></i> Ação
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fas fa-volume-up"></i> Condição
+                </button>
+
+                <button class="navbar-button">
+                    <i class="fas fa-volume-up"></i> Aguarde
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="diagram-flux">
+
+        <div id="inicio-fluxo" class="flow-card-start">
+            <div class="card-group">
+                <i class="fa-regular fa-circle-play"></i>
+                <span class="card-title">Início do Fluxo</span>
+            </div>
+            <div class="flow-card-text">Este é o início do fluxo de automação, ele pode ser iniciado através dos
+                Gatilhos.
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+/* Estilos globais */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    background-color: #dcdcdc8e;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="0.3" fill="%23ccc" /></svg>');
+    background-size: 40px 40px;
+}
+
+/* ============================ */
+
+/* Estilos para o header */
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+header .title {
+    width: 95%;
+}
+
+header .title input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #2E59D9;
+    border-radius: 8px;
+    outline: 0;
+}
+
+/* ============================ */
+
+/* Estilos para o botão do header */
+.publish-button {
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #2E59D9;
+    cursor: pointer;
+}
+
+.publish-button:hover {
+    background-color: #2242A4;
+}
+
+/* ============================ */
+
+/* Estilo para os ícones de zoom */
+.zoom-controls {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 80px;
+    right: 20px;
+    gap: 5px;
+}
+
+.zoom-button {
+    background-color: #FAFAFA;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.122);
+}
+
+.zoom-button:hover {
+    background-color: #E0E0E0;
+}
+
+.zoom-button i {
+    font-size: 20px;
+    color: blue;
+}
+/* ============================ */
+
+/* Estilo para a navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    height: 100vh;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 0;
+    overflow: auto;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navbar .box .box-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box .titulo {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.box .box-header i {
+    font-size: 1rem;
+    cursor: pointer;
+}
+/* ============================ */
+
+/* Estilos elementos da navbar */
+.grup-botoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 15px;
+}
+
+.navbar-button {
+    width: 93%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.122);
+    background: #FAFAFA;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-button:hover {
+    background: #E0E0E0;
+}
+/* ============================ */
+
+/* Estilos para o card */
+.flow-card-start {
+    width: 250px;
+    height: 120px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 16px;
+    cursor: grab;
+    position: fixed;
+    /* Altere para fixed para centralizar */
+    top: 35%;
+    /* Centralize verticalmente */
+    left: 25%;
+    /* Centralize horizontalmente */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ajustar a sombra */
+    transition: border-color 0.3s;
+    /* Adicionar transição para suavizar a mudança de cor */
+    z-index: -1;
+    /* Defina uma camada abaixo dos outros elementos */
+    font-family: "Open Sans", sans-serif;
+    /* Adicione a fonte */
+    font-size: 16px;
+    /* Tamanho do texto */
+    color: #27272a;
+    /* Adicione a cor do texto */
+    font-weight: bold;
+    /* Adicione o negrito */
+
+    /* Adicione esta parte para o círculo azul */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 60%;
+        right: -8px;
+        /* Posição do círculo à direita do card */
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        background-color: #2E59D9;
+        border-radius: 50%;
+        cursor: copy;
+        /* Adicione o cursor de ponteiro */
+        z-index: -1;
+        /* Defina uma camada abaixo dos outros elementos */
+    }
+
+}
+
+.fa-circle-play {
+    font-size: 40px;
+    /* Ajuste o tamanho conforme necessário */
+    color: #244CC0;
+    margin-left: 10px;
+
+}
+
+.flow-card-start.active {
+    border-color: #2E59D9;
+    /* Adicionar borda de contorno azul ao card ativo */
+}
+
+.flow-card-text {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-family: "Open Sans";
+    font-size: 12px;
+}
+
+.card-title {
+
+    margin-left: 13px;
+}
+
+.card-group {
+    display: flex;
+    align-items: center;
+}
+
+.flow-pane {}
+
+.icon-blue {
+    color: #244CC0;
+}
+
+.icon-orange {
+    color: #e67200;
+}
