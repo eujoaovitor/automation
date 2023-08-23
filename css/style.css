@@ -22,8 +22,6 @@ body {
 
 /* Estilos para o header */
 header {
-    width: 100%;
-    height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -97,6 +95,16 @@ header .title input {
     font-size: 20px;
     color: blue;
 }
+
+/* ============================ */
+
+/* Estilo para a conteudo */
+body .content {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+}
+
 /* ============================ */
 
 /* Estilo para a navbar */
@@ -114,6 +122,7 @@ header .title input {
     overflow: auto;
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
 }
 
 .navbar .box {
@@ -136,6 +145,7 @@ header .title input {
     font-size: 1rem;
     cursor: pointer;
 }
+
 /* ============================ */
 
 /* Estilos elementos da navbar */
@@ -162,95 +172,62 @@ header .title input {
 .navbar-button:hover {
     background: #E0E0E0;
 }
+
 /* ============================ */
 
+.diagram-flux {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Estilos para o card */
-.flow-card-start {
-    width: 250px;
-    height: 120px;
-    background-color: white;
+.group-card {
+
+    position: absolute;
+    background-color: #ffffff;
     border: 1px solid #ccc;
-    padding: 16px;
+    padding: 10px;
     cursor: grab;
-    position: fixed;
-    /* Altere para fixed para centralizar */
-    top: 35%;
-    /* Centralize verticalmente */
-    left: 25%;
-    /* Centralize horizontalmente */
+    transition: transform 0.3s ease-in-out;
+
+    /* width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
     border-radius: 10px;
-    /* Bordas arredondadas */
+    border: 1px solid #ccc;
+    cursor: grab;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Ajustar a sombra */
     transition: border-color 0.3s;
-    /* Adicionar transição para suavizar a mudança de cor */
-    z-index: -1;
-    /* Defina uma camada abaixo dos outros elementos */
-    font-family: "Open Sans", sans-serif;
-    /* Adicione a fonte */
-    font-size: 16px;
-    /* Tamanho do texto */
-    color: #27272a;
-    /* Adicione a cor do texto */
-    font-weight: bold;
-    /* Adicione o negrito */
-
-    /* Adicione esta parte para o círculo azul */
-    &::after {
-        content: '';
-        position: absolute;
-        top: 60%;
-        right: -8px;
-        /* Posição do círculo à direita do card */
-        transform: translateY(-50%);
-        width: 15px;
-        height: 15px;
-        background-color: #2E59D9;
-        border-radius: 50%;
-        cursor: copy;
-        /* Adicione o cursor de ponteiro */
-        z-index: -1;
-        /* Defina uma camada abaixo dos outros elementos */
-    }
-
+    background: #fff;
+    z-index: -1; */
 }
 
-.fa-circle-play {
-    font-size: 40px;
-    /* Ajuste o tamanho conforme necessário */
+.content-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-card i {
+    font-size: 32px;
     color: #244CC0;
-    margin-left: 10px;
-
 }
 
-.flow-card-start.active {
+.content-card .card-title {
+    font-size: 1rem;
+}
+
+.group-card.active {
     border-color: #2E59D9;
     /* Adicionar borda de contorno azul ao card ativo */
 }
 
 .flow-card-text {
-    margin-top: 15px;
-    margin-left: 10px;
-    font-family: "Open Sans";
-    font-size: 12px;
-}
-
-.card-title {
-
-    margin-left: 13px;
-}
-
-.card-group {
-    display: flex;
-    align-items: center;
-}
-
-.flow-pane {}
-
-.icon-blue {
-    color: #244CC0;
-}
-
-.icon-orange {
-    color: #e67200;
+    font-size: 0.8rem;
 }
