@@ -1,5 +1,5 @@
 /* Estilos globais */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;600&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -7,57 +7,53 @@
     box-sizing: border-box;
 }
 
-body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
+body.container {
     background-color: #dcdcdc8e;
     background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="0.3" fill="%23ccc" /></svg>');
     background-size: 40px 40px;
+    font-family: "Open-Sans";
+    background-color: #dcdcdc8e;
+
 }
 
-/* ============================ */
+/* ================================== */
 
 /* Estilos para o header */
-header {
+.header {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     margin-top: 10px;
-    margin-right: 10px;
     margin-left: 10px;
-    border-radius: 8px;
+    margin-right: 10px;
+    padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    flex: 1;
+}
+
+h1[contenteditable="true"] {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.actions {
+    display: flex;
     gap: 10px;
 }
 
-header .title {
-    width: 95%;
-}
-
-header .title input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #2E59D9;
-    border-radius: 8px;
-    outline: 0;
-}
-
-/* ============================ */
-
-/* Estilos para o botão do header */
+/* Estilos para o botão */
 .publish-button {
+    background-color: #2E59D9;
     color: #fff;
     border: none;
     border-radius: 8px;
     padding: 8px 16px;
     font-size: 16px;
-    background-color: #2E59D9;
+    font-family: 'Nunito', sans-serif;
     cursor: pointer;
 }
 
@@ -65,26 +61,26 @@ header .title input {
     background-color: #2242A4;
 }
 
-/* ============================ */
+/* ================================== */
 
 /* Estilo para os ícones de zoom */
 .zoom-controls {
     display: flex;
     flex-direction: column;
     position: fixed;
-    margin-top: 80px;
-    right: 20px;
     gap: 5px;
+    top: 80px;
+    right: 10px;
 }
 
 .zoom-button {
-    background-color: #FAFAFA;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s;
     border: 1px solid rgba(0, 0, 0, 0.122);
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #FAFAFA;
+    transition: background-color 0.3s;
 }
 
 .zoom-button:hover {
@@ -96,138 +92,354 @@ header .title input {
     color: blue;
 }
 
-/* ============================ */
+/* ================================== */
 
-/* Estilo para a conteudo */
-body .content {
-    height: 100vh;
+/* Estilo para os Nav */
+.sidebar {
     display: flex;
-    width: 100%;
-}
-
-/* ============================ */
-
-/* Estilo para a navbar */
-.navbar {
-    display: flex;
+    position: fixed;
     flex-direction: column;
-    gap: 10px;
+    height: calc(100% - 80px);
+    gap: 5px;
+    top: 80px;
+    left: 10px;
     width: 300px;
-    height: 100vh;
-    margin-top: 10px;
-    margin-left: 10px;
     padding: 1rem;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
     z-index: 0;
     overflow: auto;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
 }
 
-.navbar .box {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.navbar .box .box-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.box .titulo {
-    font-size: 1rem;
+.titulo {
+    margin-top: 20px;
     font-weight: bold;
 }
 
-.box .box-header i {
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-/* ============================ */
-
-/* Estilos elementos da navbar */
-.grup-botoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 15px;
-}
-
-.navbar-button {
-    width: 93%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.122);
-    background: #FAFAFA;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.navbar-button:hover {
-    background: #E0E0E0;
-}
-
-/* ============================ */
-
-.diagram-flux {
-    width: 70%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Estilos para o card */
-.group-card {
-
-    position: absolute;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    cursor: grab;
-    transition: transform 0.3s ease-in-out;
-
-    /* width: 250px;
+.sidebar .box {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 1rem;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    cursor: grab;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: border-color 0.3s;
-    background: #fff;
-    z-index: -1; */
 }
 
-.content-card {
+.botoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sidebar-button {
     display: flex;
-    flex-direction: row;
+    font-family: "Open-Sans";
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 12px;
     align-items: center;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.122);
+    cursor: pointer;
+    background-color: #FAFAFA;
+    transition: background-color 0.3s;
+    transition: transform 0.3s;
+}
+
+.sidebar-button:hover {
+    background-color: #E0E0E0;
+}
+
+.sidebar-button.selected {
+    position: absolute;
+}
+
+.sidebar-button i {
+    margin-right: 10px;
+}
+
+/* ================================== */
+
+/* Estilos para o card inicial*/
+.flow-card-start {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 250px;
     gap: 10px;
-}
-
-.content-card i {
-    font-size: 32px;
-    color: #244CC0;
-}
-
-.content-card .card-title {
+    /* Altere para fixed para centralizar */
+    top: 35%;
+    /* Centralize verticalmente */
+    left: 25%;
+    /* Centralize horizontalmente */
+    border: 1px solid #ccc;
+    padding: 15px;
     font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ajustar a sombra */
+    transition: border-color 0.3s;
+    color: #27272a;
+    background: white;
+    cursor: grab;
+    z-index: -1;
+    /* Defina uma camada abaixo dos outros elementos */
+
+    /* Adicione esta parte para o círculo azul */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 80%;
+        right: -8px;
+        /* Posição do círculo à direita do card */
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        background-color: #2E59D9;
+        border-radius: 50%;
+        cursor: copy;
+        /* Adicione o cursor de ponteiro */
+        z-index: -1;
+        /* Defina uma camada abaixo dos outros elementos */
+    }
 }
 
-.group-card.active {
+.flow-card-start.active {
     border-color: #2E59D9;
     /* Adicionar borda de contorno azul ao card ativo */
 }
 
+.flow-card-sendtext.active {
+    border-color: #2E59D9;
+    /* Adicionar borda de contorno azul ao card ativo */
+}
+
+.fa-circle-play {
+    font-size: 40px;
+    color: #244CC0;
+}
+
+/*Cículo azul ao lado do Nome do Card.*/
+.fa-comments {
+    font-size: 18px;
+    color: #ffffff;
+
+}
+
+.circle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2E59D9;
+    color: white;
+}
+
 .flow-card-text {
     font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.icon-blue {
+    color: #244CC0;
+}
+
+.icon-orange {
+    color: #f37b0b;
+}
+
+.icon-purple {
+    color: #800080;
+}
+
+/* ================================== */
+
+/* Estilos para o card de Envio de Texto*/
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.flow-card-sendtext {
+    z-index: -1;
+    /* Defina uma camada abaixo dos outros elementos */
+    width: 300px;
+    height: 180px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 16px;
+    cursor: grab;
+    position: fixed;
+    /* Altere para fixed para centralizar */
+    top: 35%;
+    /* Centralize verticalmente */
+    left: 45%;
+    /* Centralize horizontalmente */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ajustar a sombra */
+    transition: border-color 0.3s;
+    /* Adicionar transição para suavizar a mudança de cor */
+    font-size: 1rem;
+    /* Tamanho do texto */
+    color: #27272a;
+    /* Adicione a cor do texto */
+    font-weight: bold;
+    /* Adicione o negrito */
+
+    /* Adicione esta parte para o círculo azul */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 80%;
+        right: -8px;
+        /* Posição do círculo à direita do card */
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        background-color: #2E59D9;
+        border-radius: 50%;
+        cursor: copy;
+        /* Adicione o cursor de ponteiro */
+        z-index: -1;
+        /* Defina uma camada abaixo dos outros elementos */
+    }
+}
+
+.card-title {
+    font-size: 1rem;
+    position: relative;
+}
+
+.card-subtitle {
+    color: #244CC0;
+    font-size: 0.8rem;
+    display: block;
+}
+
+/* Ïcone de Interrogação ao lado do Nome do Card*/
+.question-icon {
+    margin-left: auto;
+    font-size: 20px;
+    color: rgb(82, 209, 51);
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.question-icon:hover {
+    color: rgb(153, 207, 140);
+}
+
+/* Estilo do ícone de lixeira */
+.delete-icon {
+    display: none;
+    /* Oculta o ícone por padrão */
+}
+
+/* Estilo do card selecionado com ícone de lixeira visível */
+.flow-card-sendtext.active .delete-icon {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    color: red;
+    cursor: pointer;
+    display: block;
+}
+
+
+.lock-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    /* Bordas arredondadas */
+    border: none;
+    /* Remover a borda padrão */
+    cursor: pointer;
+
+}
+
+#lockIcon {
+    font-size: 18px;
+    display: inline-block;
+    /* Para ajustar o espaçamento vertical */
+    vertical-align: middle;
+    /* Centralizar verticalmente */
+}
+
+.lock-button:hover {
+    background-color: #999;
+    /* Cor do botão ao passar o mouse */
+}
+
+
+.maximize-button {
+    margin-top: 300px;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+    /* Bordas arredondadas */
+    position: absolute
+}
+
+#maximizedIcon {
+    font-size: 18px;
+    display: inline-block;
+    /* Para ajustar o espaçamento vertical */
+    vertical-align: middle;
+    /* Centralizar verticalmente */
+}
+
+.maximize-button:hover {
+    background-color: #999;
+    /* Cor do botão ao passar o mouse */
+}
+
+
+.sidebar.minimized {
+    width: 50px;
+    /* Largura mínima após minimização */
+}
+
+/* ================================== */
+
+/* Estilos para os cards */
+.created-element {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 250px;
+    gap: 10px;
+    /* Posicione os elementos em relação a esses estilos */
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s;
+    color: #27272a;
+    background: white;
+    cursor: grab;
+    z-index: -1;
+}
+
+.created-element img {
+    max-width: 100%;
+    max-height: 200px;
 }
