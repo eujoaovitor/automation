@@ -208,10 +208,7 @@ h1[contenteditable="true"] {
     /* Adicionar borda de contorno azul ao card ativo */
 }
 
-.flow-card-sendtext.active {
-    border-color: #2E59D9;
-    /* Adicionar borda de contorno azul ao card ativo */
-}
+
 
 .fa-circle-play {
     font-size: 40px;
@@ -263,11 +260,10 @@ h1[contenteditable="true"] {
     gap: 8px;
 }
 
-.flow-card-sendtext {
+.flow-card {
     z-index: -1;
     /* Defina uma camada abaixo dos outros elementos */
     width: 300px;
-    height: 180px;
     background: white;
     border: 1px solid #ccc;
     padding: 16px;
@@ -310,6 +306,11 @@ h1[contenteditable="true"] {
     }
 }
 
+.flow-card.active {
+    border-color: #2E59D9;
+    /* Adicionar borda de contorno azul ao card ativo */
+}
+
 .card-title {
     font-size: 1rem;
     position: relative;
@@ -341,7 +342,7 @@ h1[contenteditable="true"] {
 }
 
 /* Estilo do card selecionado com ícone de lixeira visível */
-.flow-card-sendtext.active .delete-icon {
+.flow-card.active .delete-icon {
     position: absolute;
     top: -20px;
     right: 10px;
@@ -381,7 +382,6 @@ h1[contenteditable="true"] {
     /* Cor do botão ao passar o mouse */
 }
 
-
 .maximize-button {
     margin-top: 300px;
     margin-left: 12px;
@@ -410,36 +410,8 @@ h1[contenteditable="true"] {
     /* Cor do botão ao passar o mouse */
 }
 
-
 .sidebar.minimized {
     width: 50px;
     /* Largura mínima após minimização */
 }
-
 /* ================================== */
-
-/* Estilos para os cards */
-.created-element {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 250px;
-    gap: 10px;
-    /* Posicione os elementos em relação a esses estilos */
-    border: 1px solid #ccc;
-    padding: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: border-color 0.3s;
-    color: #27272a;
-    background: white;
-    cursor: grab;
-    z-index: -1;
-}
-
-.created-element img {
-    max-width: 100%;
-    max-height: 200px;
-}

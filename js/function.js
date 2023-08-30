@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let newElement;
 
         if (type === "texto") {
-            newElement = document.createElement("p");
-            newElement.className = "flow-card-sendtext";
+            newElement = document.createElement("div");
+            newElement.className = "flow-card";
             newElement.innerHTML = `
             <div class="card-group">
                 <div class="circle-icon">
@@ -163,9 +163,43 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`;
 
         } else if (type === "imagem") {
-            newElement = document.createElement("img");
-            newElement.src = "caminho/para/imagem.jpg";
-            newElement.alt = "Nova imagem";
+            newElement = document.createElement("div");
+            newElement.className = "flow-card";
+            newElement.innerHTML = `
+            <div class="card-group">
+                <div class="circle-icon">
+                    <i class="fa-regular fa-image"></i>
+                </div>
+                 <div style="display: flex; flex-direction:column; gap: 5px;">
+                    <span class="card-title"> Enviar Imagem</span>
+                    <span class="card-subtitle"> Imagem</span>
+                </div>
+                <i class="fa-regular fa-circle-question question-icon" ></i>
+    
+                <input type="file" name="image" id="image">
+    
+                <!-- Ícone de lixeira oculto por padrão -->
+                <i class="fa-solid fa-trash-alt delete-icon" style="display: none;"></i>    
+            </div>`;
+        } else if (type === "link") {
+            newElement = document.createElement("div");
+            newElement.className = "flow-card";
+            newElement.innerHTML = `
+            <div class="card-group">
+                <div class="circle-icon">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+                 <div style="display: flex; flex-direction:column; gap: 5px;">
+                    <span class="card-title"> Enviar link</span>
+                    <span class="card-subtitle"> Link</span>
+                </div>
+                <i class="fa-regular fa-circle-question question-icon" ></i>
+    
+                <input type="link" name="link" id="link">
+    
+                <!-- Ícone de lixeira oculto por padrão -->
+                <i class="fa-solid fa-trash-alt delete-icon" style="display: none;"></i>    
+            </div>`;
         }
 
         if (newElement) {
@@ -184,6 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
         event.dataTransfer.setData("text/plain", "imagem");
     });
 
+    const createLinkButton = document.getElementById("create-link-button");
+    createLinkButton.addEventListener("dragstart", function (event) {
+        event.dataTransfer.setData("text/plain", "link");
+    });
+
     document.addEventListener("dragover", function (event) {
         event.preventDefault();
     });
@@ -194,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = event.dataTransfer.getData("text/plain");
         const cardsContainer = document.getElementById("cards-container");
 
-        if (data === "texto" || data === "imagem") {
+        if (data === "texto" || data === "imagem" || data === "link") {
             createNewElement(data);
         }
     });
@@ -203,8 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Add a borda azul do card de Envio de texto
     document.addEventListener("mousedown", function (event) {
-        var clickedCard = event.target.closest(".flow-card-sendtext");
-        var allCards = document.querySelectorAll(".flow-card-sendtext");
+        var clickedCard = event.target.closest(".flow-card");
+        var allCards = document.querySelectorAll(".flow-card");
 
         allCards.forEach(function (card) {
             card.classList.remove("active");
@@ -228,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener("click", function (event) {
         var deleteIcon = event.target.closest(".delete-icon");
         if (deleteIcon) {
-            var card = deleteIcon.closest(".flow-card-sendtext");
+            var card = deleteIcon.closest(".flow-card");
             if (card) {
                 card.remove(); // Remove o card quando o ícone de lixeira for clicado
             }
@@ -246,8 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener("mousedown", function (event) {
-        if (event.target.closest(".flow-card-sendtext")) {
-            activateElement(event.target.closest(".flow-card-sendtext"));
+        if (event.target.closest(".flow-card")) {
+            activateElement(event.target.closest(".flow-card"));
         }
     });
 
